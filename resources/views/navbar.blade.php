@@ -83,16 +83,16 @@
 
 <nav>
     <div class="nav-container">
-        <a href="#" class="logo">MissionGermany</a>
-        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+    <a href="{{ route('home') }}" class="logo">MissionGermany</a>
+    <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
         <ul class="nav-links" id="navLinks">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Course</a></li>
-            <li><a href="#">Visa</a></li>
-            <li><a href="#">Success</a></li>
-            <li><a href="#">Review</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#">Blog</a></li>
+            <li><a href="{{ route('home') }}">Home</a></li>
+            <li><a href="{{ route('course') }}">Course</a></li>
+            <li><a href="{{ route('visa') }}">Visa</a></li>
+            <li><a href="{{ route('success') }}">Success</a></li>
+            <li><a href="{{ route('review') }}">Review</a></li>
+            <li><a href="{{ route('contact') }}">Contact Us</a></li>
+            <li><a href="{{ route('blog') }}">Blog</a></li>
         </ul>
     </div>
 </nav>
