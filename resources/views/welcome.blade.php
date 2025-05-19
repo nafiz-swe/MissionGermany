@@ -18,6 +18,8 @@
     </style>
 </head>
 <body>
+@include('navbar')
+
 
 <div class="container py-5">
     <h1 class="text-center mb-4">Germany Visa Processing Systems</h1>
