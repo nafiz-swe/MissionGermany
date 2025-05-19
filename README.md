@@ -66,7 +66,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 
 ## Laravel Project Setup with MySQL (Instead of SQLite)
-### This documentation outlines the steps required to set up a Laravel project to run with MySQL on a local development environment (XAMPP + Laravel 12.x).
+# This documentation outlines the steps required to set up a Laravel project to run with MySQL on a local development environment (XAMPP + Laravel 12.x).
 
 ## 🔧 Prerequisites
 PHP 8.4.x
@@ -120,6 +120,7 @@ File Modified	Change Summary
 MySQL (phpMyAdmin)	Created new DB: missiongermany_db
 Terminal Commands	Cleared config/cache, ran migrations
 
-## Nafizul Islam
-## B.Sc in Software Engineering
-## Daffodil International University (2019-2023)
+# Nafizul Islam 
+Subject: B.Sc in Software Engineering (2019-2023)
+University: Daffodil International University, Dhaka, Babgladesh
+Home: Natore, Rajshahi, Bangladesh
