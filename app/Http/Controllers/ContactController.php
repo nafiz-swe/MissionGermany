@@ -3,15 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Contact;
 
 class ContactController extends Controller
 {
     public function send(Request $request)
     {
-        // এখানে চাইলে Email পাঠাতে পারো অথবা Database-এ save করতে পারো
-        // উদাহরণ স্বরূপ আমরা শুধু success message দেখাচ্ছি
-
-        // Validation (চাইলে যোগ করতে পারো)
         $request->validate([
             'name'    => 'required|string|max:255',
             'email'   => 'required|email',
@@ -19,7 +16,13 @@ class ContactController extends Controller
             'message' => 'required|string',
         ]);
 
-        // এখানে আপনি চাইলে মেইল পাঠাতে পারেন বা ডাটাবেসে ইনসার্ট করতে পারেন
+        // ✅ ডাটাবেজে সেভ করছি
+        Contact::create([
+            'name'    => $request->name,
+            'email'   => $request->email,
+            'subject' => $request->subject,
+            'message' => $request->message,
+        ]);
 
         return back()->with('success', 'Thank you for contacting us!');
     }
