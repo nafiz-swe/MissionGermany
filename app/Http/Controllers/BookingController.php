@@ -1,16 +1,29 @@
 <?php
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Booking;
+use PDF; // use barte hocche; barte parbe barte parbe, popular package: barryvdh/laravel-dompdf
 
 class BookingController extends Controller
 {
     public function create()
     {
-        return view('booking');
+        $user = Auth::user();
+        return view('booking', compact('user'));
     }
 
+    public function downloadPdf($id)
+    {
+        $booking = Booking::findOrFail($id);
+
+        $pdf = PDF::loadView('bookings.pdf', compact('booking'));
+
+        $filename = 'booking_' . $booking->id . '.pdf';
+
+        return $pdf->download($filename);
+    }
+    
     public function store(Request $request)
     {
         $request->validate([

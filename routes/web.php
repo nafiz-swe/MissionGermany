@@ -4,6 +4,8 @@ use App\Http\Controllers\ContactController; // Ensure this line exists if using 
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\DashboardController;
+
 
 // Homepage
 Route::get('/', function () {
@@ -62,3 +64,6 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/dashboard', function () {
     return view('dashboard'); // এটা `resources/views/dashboard.blade.php` দেখাবে
 })->name('dashboard')->middleware('auth');
+
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth')->name('dashboard');
+Route::get('/booking/{id}/download', [BookingController::class, 'downloadPdf'])->name('booking.download');

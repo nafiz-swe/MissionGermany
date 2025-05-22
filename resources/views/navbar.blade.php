@@ -31,6 +31,7 @@
         gap: 25px;
         list-style: none;
         position: relative;
+        margin-bottom: 0;
     }
 
     .nav-links li {
@@ -159,6 +160,9 @@
             <li><a href="{{ route('success') }}">Success</a></li>
             <li><a href="{{ route('review') }}">Review</a></li>
             <li><a href="{{ route('contact') }}">Contact Us</a></li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
+            </li>
             <!-- <li><a href="{{ route('register') }}">Login/Register</a></li> -->
             @auth
     <li>
