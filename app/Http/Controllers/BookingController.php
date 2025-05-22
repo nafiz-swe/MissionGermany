@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -11,7 +10,6 @@ class BookingController extends Controller
     {
         return view('booking');
     }
-
 
     public function store(Request $request)
     {

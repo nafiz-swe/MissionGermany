@@ -30,31 +30,39 @@
 
         <select name="service_country" class="form-control mb-2" required>
             <option value="">Select Country</option>
-            <option value="Bangladesh">Bangladesh</option>
-            <option value="India">India</option>
+            <option value="Austria">Austria</option>
+            <option value="Belgium">Belgium</option>
+            <option value="Croatia">Croatia</option>
+            <option value="Denmark">Denmark</option>
             <option value="Germany">Germany</option>
-            <option value="Canada">Canada</option>
-            <option value="Australia">Australia</option>
-            <option value="USA">USA</option>
-            <option value="UK">UK</option>
+            <option value="Hungary">Hungary</option>
             <option value="France">France</option>
+            <option value="Finland">Finland</option>
             <option value="Italy">Italy</option>
+            <option value="Lithuania">Lithuania</option>
             <option value="Netherlands">Netherlands</option>
+            <option value="Portugal">Portugal</option>
+            <option value="Poland">Poland</option>
+            <option value="Russia">Russia</option>
+            <option value="Romania">Romania</option>
+            <option value="Spain">Spain</option>
             <option value="Sweden">Sweden</option>
-            <option value="Norway">Norway</option>
+            <option value="Switzerland">Switzerland</option>
+            <option value="UK">UK</option>
         </select>
 
         <select name="service_subject" class="form-control mb-2" required>
             <option value="">Select Subject</option>
-            <option>VISA Support</option>
-            <option>Course Enrolled</option>
-            <option>Ausbildung Manage</option>
             <option>Aupair Manage</option>
-            <option>FSJ/BFD Manage</option>
-            <option>University Offer</option>
+            <option>Ausbildung Manage</option>
             <option>Block Account Support</option>
-            <option>Dormitory Manage</option>
+            <option>Course (Learn German)</option>
             <option>Documents Support</option>
+            <option>Dormitory Manage</option>
+            <option>FSJ/BFD Manage</option>
+            <option>Job Manage</option>
+            <option>University Manage</option>
+            <option>VISA Support</option>
         </select>
 
         <input type="number" step="0.01" name="payment_amount" class="form-control mb-2" placeholder="Payment Amount" required>

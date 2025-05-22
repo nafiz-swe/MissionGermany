@@ -43,9 +43,6 @@
 
             <input type="radio" name="gender" value="female" id="female" {{ old('gender') == 'female' ? 'checked' : '' }} required>
             <label for="female">Female</label>
-
-            <input type="radio" name="gender" value="other" id="other" {{ old('gender') == 'other' ? 'checked' : '' }} required>
-            <label for="other">Other</label>
         </div>
 
         <div class="mb-3">
