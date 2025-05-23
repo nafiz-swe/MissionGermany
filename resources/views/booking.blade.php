@@ -131,7 +131,7 @@
             <option>VISA Support</option>
         </select>
 
-        <input type="number" step="0.01" name="payment_amount" class="form-control mb-2" placeholder="Payment Amount" required>
+        <input type="number" step="0.01" name="payment_amount" class="form-control mb-2" placeholder="Total Paid Amount" required>
 
         <select name="payment_method" class="form-control mb-2" required>
             <option value="">Select Payment Method</option>
@@ -140,7 +140,7 @@
             <option value="Rocket">Rocket</option>
         </select>
 
-        <label>Upload Payment Proof (max 10MB)</label>
+        <label>Proof of Payment:  Attached image (bank slip or transaction screenshot-max 10MB)</label>
         <input type="file" name="payment_proof" class="form-control mb-2" accept="image/*" required>
 
         <div class="form-check mb-3">

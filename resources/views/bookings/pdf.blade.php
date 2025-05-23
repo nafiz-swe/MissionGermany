@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Booking PDF</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
     <style>
          /* body {
             font-family: DejaVu Sans, sans-serif;
@@ -13,8 +14,8 @@
         } */
 
         body {
-    font-family: DejaVu Sans, sans-serif;
-    padding: 30px;
+            font-family: 'Playfair Display', serif;
+            padding: 30px;
     background-color: #f9f9f9;
     color: #333;
     
@@ -65,6 +66,7 @@
             color: #004080;
             font-size: 80px;
             font-weight: bold;
+            font-family: "Brush Script MT", cursive;
             font-style: italic;
             text-shadow: 2px 2px 4px rgba(0, 0, 102, 0.2);
             margin-bottom: 0px;
@@ -75,7 +77,7 @@
             color: #0059b3;
             font-style: italic;
             font-weight: 500;
-            margin-top: -15px;
+            margin-top: -10px;
             margin-bottom: 5px;
         }
         .main-title-p {
@@ -90,26 +92,29 @@
         .page-title {
             text-align: center;
             margin: 40px 0 10px;
-            color: #0BDA51;
+            color: #00C000;
             font-size: 40px;
             font-weight: bold;
+            font-family: 'Playfair Display', serif;
         }
 
         .sub-description {
             text-align: center;
-            font-size: 13px;
+            font-size: 16px;
             color: #666;
-            margin-bottom: 35px;
+            margin-bottom: 40px;
         }
 
         .section-title {
             text-align: center;
             margin: 40px 0 20px;
             color: #006699;
-            font-size: 24px;
+            font-size: 28px;
             font-weight: bold;
             border-bottom: 2px solid #006699;
+            padding-top: 10px;
             padding-bottom: 8px;
+            font-family: 'Playfair Display', serif;
         }
 
         table {
@@ -122,7 +127,7 @@
             padding: 10px 12px;
             border: 1px solid #ccc;
             text-align: left;
-            font-size: 14px;
+            font-size: 15px;
         }
 
         th {
@@ -138,6 +143,29 @@
             width: 220px;
             border-radius: 6px;
         }
+        .terms-section {
+            margin-top: 40px;
+            font-size: 13px;
+            color: #555;
+            font-style: italic;
+            text-align: justify;
+            border-top: 1px dashed #bbb;
+            padding-top: 15px;
+        }
+        .tick-box {
+            display: inline-block;
+            color: green;
+            font-weight: bold;
+            border: 1px solid green;
+            border-radius: 3px;
+            padding: 0px 4px;
+            margin-right: 5px;
+            font-size: 15px;
+            line-height: 1;
+            vertical-align: bottom;
+            font-family: DejaVu Sans, sans-serif !important;
+        }
+
     </style>
 </head>
 <body>
@@ -156,7 +184,7 @@
         <!-- Booking Heading -->
         <div class="page-title">Booking Confirmation</div>
         <div class="sub-description">
-            Empowering your European ambitions with expert guidance, career support, and German language training.
+            Empowering your European ambitions with expert guidance, career support, <br> and German language training.
         </div>
 
         <!-- Personal Details -->
@@ -188,21 +216,21 @@
                 <td>{{ $booking->email }}</td>
             </tr>
             <tr>
-                <th>Service Country</th>
+                <th>Destination Country</th>
                 <td>{{ $booking->service_country }}</td>
             </tr>
             <tr>
                 <th>Booking Purpose</th>
                 <td>{{ $booking->service_subject }}</td>
             </tr>
-        </table>
+        </table><br><br>
 
         <!-- Payment Details -->
         <div class="section-title">Payment Details</div>
 
         <table>
             <tr>
-                <th>Payment Amount</th>
+                <th>Total Paid Amount</th>
                 <td>{{ number_format($booking->payment_amount, 2) }} BDT</td>
             </tr>
             <tr>
@@ -211,7 +239,7 @@
             </tr>
             @if($booking->payment_proof)
             <tr>
-                <th>Payment Proof</th>
+                <th>Proof of Payment</th>
                 <td>
                     <img src="{{ public_path('storage/' . $booking->payment_proof) }}" class="proof-img" alt="Payment Proof">
                 </td>
@@ -222,6 +250,17 @@
                 <td>{{ $booking->created_at->format('d M Y h:i A') }}</td>
             </tr>
         </table>
+
+        <div class="terms-section">
+    <p><em>We are always by your side to make your European journey smoother.</em></p>
+    <p>
+    <span class="tick-box">&#10003;</span>
+    By confirming your booking, you acknowledge and agree to our service terms and refund policy.
+        All payments are considered final and are subject to the terms and conditions outlined by EuroZoom.
+        Your trust and cooperation are deeply valued and appreciated.
+    </p>
+</div>
+
 
     </div>
 

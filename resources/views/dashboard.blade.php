@@ -39,14 +39,14 @@
                                     <div><strong>Place of Birth:</strong> {{ $booking->place_of_birth ?? 'N/A' }}</div>
                                     <div><strong>Date of Birth:</strong> {{ $booking->date_of_birth ? \Carbon\Carbon::parse($booking->date_of_birth)->format('d M Y') : 'N/A' }}</div>
                                     <div><strong>Passport/NID:</strong> {{ $booking->passport_or_nid ?? 'N/A' }}</div>
-                                    <div><strong>Service Country:</strong> {{ $booking->service_country ?? 'N/A' }}</div>
+                                    <div><strong>Destination Country:</strong> {{ $booking->service_country ?? 'N/A' }}</div>
                                     <div><strong>Booking Purpose:</strong> {{ $booking->service_subject ?? 'N/A' }}</div>
-                                    <div><strong>Payment Amount:</strong> {{ number_format($booking->payment_amount, 2) }} BDT</div>
+                                    <div><strong>Total Paid Amount:</strong> {{ number_format($booking->payment_amount, 2) }} BDT</div>
                                     <div><strong>Payment Method:</strong> {{ ucfirst($booking->payment_method) }}</div>
 
                                     @if($booking->payment_proof)
                                         <div class="mt-2">
-                                            <strong>Payment Proof:</strong><br>
+                                            <strong>Proof of Payment:</strong><br>
                                             <a href="{{ asset('storage/' . $booking->payment_proof) }}" target="_blank">
                                                 <img src="{{ asset('storage/' . $booking->payment_proof) }}" alt="Payment Proof" style="max-width: 150px; max-height: 100px; object-fit: contain; border: 1px solid #ccc; padding: 2px;">
                                             </a>
