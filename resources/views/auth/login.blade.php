@@ -1,5 +1,23 @@
 @extends('layouts.app')
+<style>
+        .login-btn {
+        padding: 8px 18px;
+        font-size: 15px;
+        width: 100%;
+        font-weight: 500;
+        color: #fff;
+        background: linear-gradient(135deg, #0052cc, #00c6ff); /* Dark Blue → Cyan */
+        border: none;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        box-shadow: 0 3px 10px rgba(0, 82, 204, 0.3);
+    }
 
+    .login-btn:hover {
+        background: linear-gradient(135deg, #0041a8, #00b3e6); /* Slightly darker on hover */
+        box-shadow: 0 5px 15px rgba(0, 82, 204, 0.4);
+    }
+</style>
 @section('content')
 <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh; background: #f8f9fa;">
     <div class="card shadow-lg p-4" style="width: 100%; max-width: 450px; border-radius: 15px;">
@@ -23,8 +41,9 @@
                 <label for="password" class="form-label">পাসওয়ার্ড</label>
                 <input type="password" name="password" id="password" class="form-control" required>
             </div>
-
-            <button type="submit" class="btn btn-primary w-100 mb-3">লগইন করুন</button>
+            <div class="text-center mt-3">
+                <button type="submit" class="login-btn"> Login</button>
+            </div>
         </form>
 
         <div class="text-center mt-2">

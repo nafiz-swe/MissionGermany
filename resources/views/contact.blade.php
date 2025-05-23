@@ -36,21 +36,38 @@
             border-radius: 5px;
         }
 
-        .contact-form button {
-            margin-top: 20px;
+        .contact-btn {
+            padding: 8px 18px;
+            font-size: 15px;
+            font-weight: 500;
+            color: #fff;
             width: 100%;
+            background: linear-gradient(135deg, oklch(55% 0.23 131.684), oklch(70% 0.18 131.684));
+            border: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0, 82, 204, 0.25);
         }
+
+        .contact-btn:hover {
+            background: linear-gradient(135deg, oklch(50% 0.25 131.684), oklch(68% 0.16 131.684));
+            box-shadow: 0 5px 15px rgba(0, 82, 204, 0.35);
+        }
+
     </style>
 </head>
 <body>
 
     {{-- Navigation --}}
     @include('navbar')
+    <div class="text-white text-center py-5" style="background:oklch(64.8% 0.2 131.684); padding-left: 20px; padding-right: 20px;">
+        <h1>Contact Us</h1>
+        <p>Have questions or need help? Reach out to us anytime — we’re here for you!</p>
+    </div>
+
 
     {{-- Contact Form --}}
     <div class="contact-section">
-        <h2>Contact Us</h2>
-
         {{-- Success Alert --}}
         @if(session('success'))
             <div class="alert alert-success">
@@ -73,7 +90,9 @@
             <label for="message">Your Message</label>
             <textarea name="message" id="message" rows="5" required></textarea>
 
-            <button type="submit" class="btn btn-primary">Send Message</button>
+            <div class="text-center mt-3">
+                <button type="submit" class="contact-btn"> Send Message </button>
+            </div>
         </form>
     </div>
 

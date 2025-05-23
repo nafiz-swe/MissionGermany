@@ -4,7 +4,11 @@
         text-align: center;
         vertical-align: middle !important;
     }
-
+    .download-btn:hover {
+    background-color: #198754 !important; /* Bootstrap bg-success color */
+    color: #fff !important;
+    border-color: #198754 !important;
+}
     .logout-note {
         font-size: 15px;
     }
@@ -23,11 +27,32 @@
 
     .logout-btn:hover {
         background: linear-gradient(135deg, #0041a8, #00b3e6); /* Slightly darker on hover */
-        transform: scale(1.03);
         box-shadow: 0 5px 15px rgba(0, 82, 204, 0.4);
     }
 
     .logout-btn i {
+        margin-right: 6px;
+    }
+    .update-btn {
+        padding: 8px 18px;
+        font-size: 15px;
+        width: 100%;
+        font-weight: 500;
+        color: #fff;
+        background: linear-gradient(135deg, #0052cc, #00c6ff); /* Dark Blue → Cyan */
+        border: none;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        box-shadow: 0 3px 10px rgba(0, 82, 204, 0.3);
+    }
+
+    .update-btn:hover {
+        background: linear-gradient(135deg, #0041a8, #00b3e6); /* Slightly darker on hover */
+        /* transform: scale(1.03); */
+        box-shadow: 0 5px 15px rgba(0, 82, 204, 0.4);
+    }
+
+    .update-btn i {
         margin-right: 6px;
     }
 </style>
@@ -40,22 +65,51 @@
     <p>আপনি সফলভাবে লগইন করেছেন।</p>
 
     <div class="row mt-4">
+    @if(session('success'))
+    <div class="alert alert-success mt-3">
+        {{ session('success') }}
+    </div>
+@endif
 
-        <!-- Account Details Section -->
-        <div class="col-md-6">
-            <div class="card shadow-sm mb-4">
-            <div class="card-header text-white" style="background-color: #003366;">
-                <!-- <div class="card-header bg-primary text-white"> -->
-                    <h5 class="mb-0">👤 Account Details</h5>
-                </div>
-                <div class="card-body">
-                    <p><strong>Name:</strong> {{ $user->name }}</p>
-                    <p><strong>Mobile:</strong> {{ $user->mobile ?? 'N/A' }}</p>
-                    <p><strong>Email:</strong> {{ $user->email }}</p>
-                    <p><strong>Gender:</strong> {{ ucfirst($user->gender) ?? 'N/A' }}</p>
-                </div>
-            </div>
+<!-- Account Details Section -->
+<div class="col-md-6">
+    <div class="card shadow-sm mb-4">
+        <div class="card-header text-white" style="background: linear-gradient(135deg, #0052cc, #00c6ff);">
+            <h5 class="mb-0">👤 Account Details</h5>
         </div>
+        <div class="card-body">
+            <form method="POST" action="{{ route('user.update') }}">
+                @csrf
+                @method('PUT')
+                
+                <div class="mb-3">
+                    <label for="name" class="form-label">Full Name <span class="text-danger">*</span></label>
+                    <input type="text" name="name" class="form-control" value="{{ old('name', $user->name) }}" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="mobile" class="form-label">Mobile <span class="text-danger">*</span></label>
+                    <input type="text" name="mobile" class="form-control" value="{{ old('mobile', $user->mobile) }}" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="gender" class="form-label">Gender <span class="text-danger">*</span></label>
+                    <select name="gender" class="form-select" required>
+                        <option value="">Select Gender</option>
+                        <option value="male" {{ $user->gender == 'male' ? 'selected' : '' }}>Male</option>
+                        <option value="female" {{ $user->gender == 'female' ? 'selected' : '' }}>Female</option>
+                        <option value="other" {{ $user->gender == 'other' ? 'selected' : '' }}>Other</option>
+                    </select>
+                </div>
+                <div class="text-center mt-3">
+                    <button type="submit" class="update-btn">
+                        <i class="fas fa-save"></i> Update Info
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
         <!-- Booking & Payment History Section -->
         <div class="col-md-12">
@@ -106,10 +160,11 @@
                                             </td>
                                             <td>{{ $booking->created_at->format('d M Y h:i A') }}</td>
                                             <td>
-                                                <a href="{{ route('booking.download', $booking->id) }}" 
-                                                   class="btn btn-sm btn-outline-primary" target="_blank">
-                                                   PDF
-                                                </a>
+                                            <a href="{{ route('booking.download', $booking->id) }}" 
+                                                class="btn btn-sm btn-outline-primary download-btn" target="_blank">
+                                                PDF
+                                            </a>
+
                                             </td>
                                         </tr>
                                     @endforeach

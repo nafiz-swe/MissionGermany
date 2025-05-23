@@ -7,8 +7,7 @@
 </head>
 <body>
     @include('navbar')
-
-    <div class="bg-success text-white text-center py-5">
+    <div class="text-white text-center py-5" style="background: oklch(52.7% 0.154 150.069); padding-left: 20px; padding-right: 20px;">
         <h1>Success Stories</h1>
         <p>আমাদের স্টুডেন্টদের সফলতার গল্পগুলো জানুন।</p>
     </div>

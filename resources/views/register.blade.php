@@ -1,5 +1,23 @@
 @extends('layouts.app')
+<style>
+        .register-btn {
+        padding: 8px 18px;
+        font-size: 15px;
+        width: 100%;
+        font-weight: 500;
+        color: #fff;
+        background: linear-gradient(135deg, #0052cc, #00c6ff); /* Dark Blue → Cyan */
+        border: none;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        box-shadow: 0 3px 10px rgba(0, 82, 204, 0.3);
+    }
 
+    .register-btn:hover {
+        background: linear-gradient(135deg, #0041a8, #00b3e6); /* Slightly darker on hover */
+        box-shadow: 0 5px 15px rgba(0, 82, 204, 0.4);
+    }
+</style>
 @section('content')
 <div class="container mt-5" style="max-width: 600px; font-family: 'Poppins', sans-serif;">
     <div class="card shadow-sm border-0">
@@ -62,7 +80,9 @@
                     <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" required>
                 </div>
 
-                <button type="submit" class="btn btn-primary w-100">রেজিস্টার করুন</button>
+                <div class="text-center mt-3">
+                    <button type="submit" class="register-btn"> Create Account</button>
+                </div>
             </form>
 
             <div class="mt-4 text-center">

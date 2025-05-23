@@ -1,11 +1,12 @@
 @extends('layouts.app')
+    <div class="text-white text-center py-5" style="background:oklch(37.3% 0.034 259.733); padding-left: 20px; padding-right: 20px;">
+        <h1>Visa Support</h1>
+        <p>Everything you need to know about getting your European Visa.</p>
+    </div>
+
 
 @section('content')
 @include('services.common_booking')
-<div class="visa-header">
-        <h1>Visa Guidelines</h1>
-        <p>Everything you need to know about getting your German Visa.</p>
-    </div>
 
     <div class="container my-5 visa-content">
         <h2>Visa Process Overview</h2>

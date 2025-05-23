@@ -1,12 +1,21 @@
 @extends('layouts.app')
+<div class="text-white text-center py-5" style="background: linear-gradient(135deg, #0052cc, #00c6ff); padding-left: 20px; padding-right: 20px;">
+    <h1>Booking Form</h1>
+    <p>
+        Fill in the form to book your support session with us.
+        Fields marked with <span class="text-danger">*</span> are mandatory.
+        Ensure the payment proof is uploaded correctly.
+    </p>
+</div>
 
 @section('content')
+
 <div class="container mt-5">
 
-    <div class="p-4 text-white shadow-sm mb-4 rounded" style="background-color: #003366;">
+    <!-- <div class="p-4 text-white shadow-sm mb-4 rounded" >
         <h2 class="mb-2">Booking Form</h2>
         <p class="mb-0">Fill in the form to book your support session with us. Fields marked with <span class="text-danger">*</span> are mandatory. Ensure the payment proof is uploaded correctly.</p>
-    </div>
+    </div> -->
 
     @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
@@ -187,21 +196,27 @@
         </div>
 
         <style>
-    .btn-custom {
-        background-color: #003366;
-        color: white;
-        transition: background-color 0.3s ease;
+    .booking-btn {
+        padding: 8px 18px;
+        font-size: 15px;
+        width: 100%;
+        font-weight: 500;
+        color: #fff;
+        background: linear-gradient(135deg, #0052cc, #00c6ff); /* Dark Blue → Cyan */
+        border: none;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        box-shadow: 0 3px 10px rgba(0, 82, 204, 0.3);
     }
-    .btn-custom:hover {
-        background-color: #00509e; /* হোভার কালার একটু হালকা নীল */
-        color: white;
+    .booking-btn:hover {
+        background: linear-gradient(135deg, #0041a8, #00b3e6); /* Slightly darker on hover */
+        box-shadow: 0 5px 15px rgba(0, 82, 204, 0.4);
     }
 </style>
 
-<div class="col-12">
-    <button type="submit" class="btn btn-sm btn-custom w-100">Submit Booking</button>
-</div>
-
+                <div class="text-center mt-3">
+                    <button type="submit" class="booking-btn"> Submit Booking </button>
+                </div>
 
     </form>
 </div>

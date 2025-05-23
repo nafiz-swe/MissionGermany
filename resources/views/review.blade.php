@@ -8,7 +8,7 @@
 <body>
     @include('navbar')
 
-    <div class="bg-primary text-white text-center py-5">
+    <div class="text-white text-center py-5" style="background: oklch(44.3% 0.11 240.79); padding-left: 20px; padding-right: 20px;">
         <h1>Student Reviews</h1>
         <p>আমাদের সার্ভিস নিয়ে স্টুডেন্টদের মতামত।</p>
     </div>

@@ -5,6 +5,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\UserController;
 
 
 // Homepage
@@ -67,3 +68,4 @@ Route::get('/dashboard', function () {
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth')->name('dashboard');
 Route::get('/booking/{id}/download', [BookingController::class, 'downloadPdf'])->name('booking.download');
+Route::put('/user/update', [UserController::class, 'update'])->name('user.update');
