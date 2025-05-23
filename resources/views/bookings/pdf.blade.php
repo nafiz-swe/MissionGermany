@@ -125,7 +125,7 @@
 
         th, td {
             padding: 10px 12px;
-            border: 1px solid #ccc;
+            border: 1px solid #4682B4;
             text-align: left;
             font-size: 15px;
         }
