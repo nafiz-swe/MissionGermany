@@ -138,46 +138,46 @@
         <a href="{{ route('home') }}" class="logo">EuroZoom</a>
         <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
         <ul class="nav-links" id="navLinks">
-            <li><a href="{{ route('home') }}">Home</a></li>
+    <li><a href="{{ route('home') }}">Home</a></li>
 
-            <!-- Services Dropdown -->
-            <li class="dropdown">
-                <a href="#">Services</a>
-                <div class="dropdown-content">
-                    <a href="{{ route('services.aupair') }}">Aupair Manage</a>
-                    <a href="{{ route('services.ausbildung') }}">Ausbildung Manage</a>
-                    <a href="{{ route('services.block_account') }}">Block Account Support</a>
-                    <a href="{{ route('services.course') }}">Course (Learn German)</a>
-                    <a href="{{ route('services.documents') }}">Documents Support</a>
-                    <a href="{{ route('services.dormitory') }}">Dormitory Manage</a>
-                    <a href="{{ route('services.fsj_bfd') }}">FSJ/BFD Manage</a>
-                    <a href="{{ route('services.job') }}">Job Manage</a>
-                    <a href="{{ route('services.university') }}">University Manage</a>
-                    <a href="{{ route('services.visa') }}">VISA Support</a>
-                </div>
-            </li>
-
-            <li><a href="{{ route('success') }}">Success</a></li>
-            <li><a href="{{ route('review') }}">Review</a></li>
-            <li><a href="{{ route('contact') }}">Contact Us</a></li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
-            </li>
-            <!-- <li><a href="{{ route('register') }}">Login/Register</a></li> -->
-            @auth
-    <li>
-        <form action="{{ route('logout') }}" method="POST">
-            @csrf
-            <button type="submit" style="background:none; border:none; color:#000; cursor:pointer; font-weight:500;">
-                Logout
-            </button>
-        </form>
+    <!-- Services Dropdown -->
+    <li class="dropdown">
+        <a href="#">Services</a>
+        <div class="dropdown-content">
+            <a href="{{ route('services.aupair') }}">Aupair Manage</a>
+            <a href="{{ route('services.ausbildung') }}">Ausbildung Manage</a>
+            <a href="{{ route('services.block_account') }}">Block Account Support</a>
+            <a href="{{ route('services.course') }}">Course (Learn German)</a>
+            <a href="{{ route('services.documents') }}">Documents Support</a>
+            <a href="{{ route('services.dormitory') }}">Dormitory Manage</a>
+            <a href="{{ route('services.fsj_bfd') }}">FSJ/BFD Manage</a>
+            <a href="{{ route('services.job') }}">Job Manage</a>
+            <a href="{{ route('services.university') }}">University Manage</a>
+            <a href="{{ route('services.visa') }}">VISA Support</a>
+        </div>
     </li>
-@else
-    <li><a href="{{ route('register') }}">Login/Register</a></li>
-@endauth
 
-        </ul>
+    <li><a href="{{ route('success') }}">Success</a></li>
+    <li><a href="{{ route('review') }}">Review</a></li>
+    <li><a href="{{ route('contact') }}">Contact Us</a></li>
+
+    @auth
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
+        </li>
+        <li>
+            <form action="{{ route('logout') }}" method="POST" style="display:inline;">
+                @csrf
+                <button type="submit" style="background:none; border:none; color:#000; cursor:pointer; font-weight:500;">
+                    Logout
+                </button>
+            </form>
+        </li>
+    @else
+        <li><a href="{{ route('register') }}">Login/Register</a></li>
+    @endauth
+</ul>
+
     </div>
 </nav>
 
