@@ -40,7 +40,7 @@
                                     <div><strong>Date of Birth:</strong> {{ $booking->date_of_birth ? \Carbon\Carbon::parse($booking->date_of_birth)->format('d M Y') : 'N/A' }}</div>
                                     <div><strong>Passport/NID:</strong> {{ $booking->passport_or_nid ?? 'N/A' }}</div>
                                     <div><strong>Service Country:</strong> {{ $booking->service_country ?? 'N/A' }}</div>
-                                    <div><strong>Service Subject:</strong> {{ $booking->service_subject ?? 'N/A' }}</div>
+                                    <div><strong>Booking Purpose:</strong> {{ $booking->service_subject ?? 'N/A' }}</div>
                                     <div><strong>Payment Amount:</strong> {{ number_format($booking->payment_amount, 2) }} BDT</div>
                                     <div><strong>Payment Method:</strong> {{ ucfirst($booking->payment_method) }}</div>
 

@@ -4,41 +4,130 @@
     <meta charset="UTF-8">
     <title>Booking PDF</title>
     <style>
-        body {
+         /* body {
             font-family: DejaVu Sans, sans-serif;
-            position: relative;
-            padding: 20px;
-        }
+            padding: 30px;
+            background-color: #f9f9f9;
+            color: #333;
+            border: 2px solid #004080;
+        } */
+
+        body {
+    font-family: DejaVu Sans, sans-serif;
+    padding: 30px;
+    background-color: #f9f9f9;
+    color: #333;
+    
+    border: 5px double #004080;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 64, 128, 0.2), 0 0 5px rgba(0, 64, 128, 0.2) inset;
+} 
+
+
+ 
+
+ 
 
         .watermark {
-    position: absolute;
-    top: 25%;
-    left: 20%;
-    opacity: 0.08;
-    z-index: -1;
-    width: 400px;
-    font-size: 100px;
-    font-weight: bold;
-    font-style: italic;
-    transform: rotate(20deg);
-    transform-origin: left top;
-}
-
-        .content {
-            position: relative;
-            z-index: 1;
+            position: fixed;
+            background: url('{{ asset('eurozoom.png') }}') no-repeat;
+            top: 30%;
+            left: 20%;
+            opacity: 0.06;
+            z-index: 999;
+            width: 400px;
+            font-size: 100px;
+            font-weight: bold;
+            font-style: italic;
+            transform: rotate(20deg);
+            transform-origin: left top;
         }
 
-        h2 {
+        .container {
+            background: #fff;
+            /* border: 2px solid #004080; */
+            border-radius: 10px;
+            padding: 25px 30px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+
+        .highlight-box {
+            background-color: #e6f2ff;
+            border: 1px solid #4682B4;
+            border-radius: 5px;
+            padding: 20px;
             text-align: center;
+            box-shadow: 0 0 15px rgba(0, 102, 204, 0.2);
+            margin-bottom: 45px;
+        }
+
+        .main-title {
+            color: #004080;
+            font-size: 80px;
+            font-weight: bold;
+            font-style: italic;
+            text-shadow: 2px 2px 4px rgba(0, 0, 102, 0.2);
+            margin-bottom: 0px;
+        }
+
+        .main-title-p2 {
+            font-size: 20px;
+            color: #0059b3;
+            font-style: italic;
+            font-weight: 500;
+            margin-top: -15px;
+            margin-bottom: 5px;
+        }
+        .main-title-p {
+            font-size: 14px;
+            color: #0059b3;
+            font-style: italic;
+            font-weight: 500;
+            margin-top: 5px;
+            margin-bottom: 40px;
+
+        }
+        .page-title {
+            text-align: center;
+            margin: 40px 0 10px;
+            color: #0BDA51;
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        .sub-description {
+            text-align: center;
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 40px 0 20px;
+            color: #006699;
+            font-size: 24px;
+            font-weight: bold;
+            border-bottom: 2px solid #006699;
+            padding-bottom: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
             margin-bottom: 30px;
         }
 
-        .section {
-            margin-bottom: 10px;
+        th, td {
+            padding: 10px 12px;
+            border: 1px solid #ccc;
+            text-align: left;
+            font-size: 14px;
         }
 
-        .section label {
+        th {
+            background-color: #e6f0ff;
+            color: #003366;
             font-weight: bold;
         }
 
@@ -46,48 +135,94 @@
             margin-top: 10px;
             border: 1px solid #ccc;
             padding: 3px;
-            width: 200px;
+            width: 220px;
+            border-radius: 6px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Watermark Image -->
-    <!-- <img src="{{ public_path('eurozoom.png') }}" class="watermark" alt="Watermark"> -->
     <img src="{{ asset('eurozoom.png') }}" class="watermark" alt="EuroZoom">
-    <!-- @php
-    $path = public_path('eurozoom.png');
-    $type = pathinfo($path, PATHINFO_EXTENSION);
-    $data = file_get_contents($path);
-    $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
-@endphp
 
-<img src="{{ $base64 }}" class="watermark" alt="EuroZoom" style="width:400px; opacity:0.08; position: fixed; top: 25%; left: 20%; z-index: 0;"> -->
+    <div class="container">
 
+        <!-- Styled Branding Box -->
+        <div class="highlight-box">
+            <div class="main-title">EuroZoom</div>
+            <div class="main-title-p2">Your Gateway to Europe</div>
+            <div class="main-title-p">www.eurozoom.net | eurozoom.net@gmail.com | 01737-226404 (WhatsApp)</div>
+        </div>
 
+        <!-- Booking Heading -->
+        <div class="page-title">Booking Confirmation</div>
+        <div class="sub-description">
+            Empowering your European ambitions with expert guidance, career support, and German language training.
+        </div>
 
-    <div class="content">
-        <h2>Booking & Payment Information</h2>
+        <!-- Personal Details -->
+        <div class="section-title">Personal Details</div>
 
-        <div class="section"><label>Full Name:</label> {{ $booking->full_name }}</div>
-        <div class="section"><label>Place of Birth:</label> {{ $booking->place_of_birth }}</div>
-        <div class="section"><label>Date of Birth:</label> {{ \Carbon\Carbon::parse($booking->date_of_birth)->format('d M Y') }}</div>
-        <div class="section"><label>Passport or NID:</label> {{ $booking->passport_or_nid }}</div>
-        <div class="section"><label>Mobile:</label> {{ $booking->mobile }}</div>
-        <div class="section"><label>Email:</label> {{ $booking->email }}</div>
-        <div class="section"><label>Service Country:</label> {{ $booking->service_country }}</div>
-        <div class="section"><label>Service Subject:</label> {{ $booking->service_subject }}</div>
-        <div class="section"><label>Payment Amount:</label> {{ number_format($booking->payment_amount, 2) }} BDT</div>
-        <div class="section"><label>Payment Method:</label> {{ ucfirst($booking->payment_method) }}</div>
+        <table>
+            <tr>
+                <th>Full Name</th>
+                <td>{{ $booking->full_name }}</td>
+            </tr>
+            <tr>
+                <th>Place of Birth</th>
+                <td>{{ $booking->place_of_birth }}</td>
+            </tr>
+            <tr>
+                <th>Date of Birth</th>
+                <td>{{ \Carbon\Carbon::parse($booking->date_of_birth)->format('d M Y') }}</td>
+            </tr>
+            <tr>
+                <th>Passport or NID</th>
+                <td>{{ $booking->passport_or_nid }}</td>
+            </tr>
+            <tr>
+                <th>Mobile</th>
+                <td>{{ $booking->mobile }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ $booking->email }}</td>
+            </tr>
+            <tr>
+                <th>Service Country</th>
+                <td>{{ $booking->service_country }}</td>
+            </tr>
+            <tr>
+                <th>Booking Purpose</th>
+                <td>{{ $booking->service_subject }}</td>
+            </tr>
+        </table>
 
-        @if($booking->payment_proof)
-            <div class="section">
-                <label>Payment Proof:</label><br>
-                <img src="{{ public_path('storage/' . $booking->payment_proof) }}" class="proof-img" alt="Payment Proof">
-            </div>
-        @endif
+        <!-- Payment Details -->
+        <div class="section-title">Payment Details</div>
 
-        <div class="section"><label>Booking Time:</label> {{ $booking->created_at->format('d M Y h:i A') }}</div>
+        <table>
+            <tr>
+                <th>Payment Amount</th>
+                <td>{{ number_format($booking->payment_amount, 2) }} BDT</td>
+            </tr>
+            <tr>
+                <th>Payment Method</th>
+                <td>{{ ucfirst($booking->payment_method) }}</td>
+            </tr>
+            @if($booking->payment_proof)
+            <tr>
+                <th>Payment Proof</th>
+                <td>
+                    <img src="{{ public_path('storage/' . $booking->payment_proof) }}" class="proof-img" alt="Payment Proof">
+                </td>
+            </tr>
+            @endif
+            <tr>
+                <th>Booking Time</th>
+                <td>{{ $booking->created_at->format('d M Y h:i A') }}</td>
+            </tr>
+        </table>
+
     </div>
 
 </body>
