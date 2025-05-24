@@ -5,29 +5,32 @@
     <title>Booking PDF</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
     <style>
-         /* body {
-            font-family: DejaVu Sans, sans-serif;
-            padding: 30px;
-            background-color: #f9f9f9;
-            color: #333;
-            border: 2px solid #004080;
-        } */
-
-        body {
-            font-family: 'Playfair Display', serif;
-            padding: 30px;
+body {
+    font-family: 'Playfair Display', serif;
+    padding: 30px;
     background-color: #f9f9f9;
-    color: #333;
-    
-    border: 5px double #004080;
+    color: #014137;
+    border: 5px double #00c6aa;
     border-radius: 5px;
-    box-shadow: 0 0 20px rgba(0, 64, 128, 0.2), 0 0 5px rgba(0, 64, 128, 0.2) inset;
-} 
+    box-shadow: 0 0 20px rgba(1, 109, 90, 0.2), 0 0 5px rgba(1, 109, 90, 0.2) inset;
+}
 
+.container {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 25px 30px;
+    box-shadow: 0 0 10px rgba(1, 109, 90, 0.1);
+}
 
- 
-
- 
+.highlight-box {
+    background-color: #e0fdf9;
+    border: 1px solid #00a895;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 183, 168, 0.2);
+    margin-bottom: 45px;
+}
 
         .watermark {
             position: fixed;
@@ -43,27 +46,8 @@
             transform: rotate(20deg);
             transform-origin: left top;
         }
-
-        .container {
-            background: #fff;
-            /* border: 2px solid #004080; */
-            border-radius: 10px;
-            padding: 25px 30px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.05);
-        }
-
-        .highlight-box {
-            background-color: #e6f2ff;
-            border: 1px solid #4682B4;
-            border-radius: 5px;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 0 15px rgba(0, 102, 204, 0.2);
-            margin-bottom: 45px;
-        }
-
         .main-title {
-            color: #004080;
+            color: #00c6aa;
             font-size: 80px;
             font-weight: bold;
             font-family: "Brush Script MT", cursive;
@@ -74,7 +58,7 @@
 
         .main-title-p2 {
             font-size: 20px;
-            color: #0059b3;
+            color: #00c6aa;
             font-style: italic;
             font-weight: 500;
             margin-top: -10px;
@@ -82,7 +66,7 @@
         }
         .main-title-p {
             font-size: 14px;
-            color: #0059b3;
+            color: #00c6aa;
             font-style: italic;
             font-weight: 500;
             margin-top: 5px;
@@ -92,7 +76,7 @@
         .page-title {
             text-align: center;
             margin: 40px 0 10px;
-            color: #00C000;
+            color:rgb(7, 151, 7);
             font-size: 40px;
             font-weight: bold;
             font-family: 'Playfair Display', serif;
@@ -108,10 +92,10 @@
         .section-title {
             text-align: center;
             margin: 40px 0 20px;
-            color: #006699;
+            color: #00c6aa;
             font-size: 28px;
             font-weight: bold;
-            border-bottom: 2px solid #006699;
+            border-bottom: 2px solid #00c6aa;
             padding-top: 10px;
             padding-bottom: 8px;
             font-family: 'Playfair Display', serif;
@@ -125,14 +109,14 @@
 
         th, td {
             padding: 10px 12px;
-            border: 1px solid #4682B4;
+            border: 1px solid #00c6aa;
             text-align: left;
             font-size: 15px;
         }
 
         th {
-            background-color: #e6f0ff;
-            color: #003366;
+            background-color: #e0fdf9;
+            color: #000;
             font-weight: bold;
         }
 

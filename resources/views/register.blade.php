@@ -1,23 +1,9 @@
 @extends('layouts.app')
-<style>
-        .register-btn {
-        padding: 8px 18px;
-        font-size: 15px;
-        width: 100%;
-        font-weight: 500;
-        color: #fff;
-        background: linear-gradient(135deg, #0052cc, #00c6ff); /* Dark Blue → Cyan */
-        border: none;
-        border-radius: 8px;
-        transition: all 0.3s ease;
-        box-shadow: 0 3px 10px rgba(0, 82, 204, 0.3);
-    }
 
-    .register-btn:hover {
-        background: linear-gradient(135deg, #0041a8, #00b3e6); /* Slightly darker on hover */
-        box-shadow: 0 5px 15px rgba(0, 82, 204, 0.4);
-    }
-</style>
+<div class="text-white text-center py-5" style="background: linear-gradient(135deg, #016d5a, #00b7a8); padding-left: 20px; padding-right: 20px;">
+<h1>Creat New Account</h1>
+        <p>Have questions or need help? Reach out to us anytime — we’re here for you!</p>
+    </div>
 @section('content')
 <div class="container mt-5" style="max-width: 600px; font-family: 'Poppins', sans-serif;">
     <div class="card shadow-sm border-0">
@@ -81,13 +67,14 @@
                 </div>
 
                 <div class="text-center mt-3">
-                    <button type="submit" class="register-btn"> Create Account</button>
+                    <button type="submit" class="eurozoom-btn ez-submit"> Create account </button>
+                    <!-- <button type="submit" class="register-btn"> Create Account</button> -->
                 </div>
             </form>
 
             <div class="mt-4 text-center">
                 ইতোমধ্যে একাউন্ট আছে?
-                <a href="{{ url('/login') }}" class="text-decoration-none text-primary fw-semibold">লগইন করুন</a>
+                <a href="{{ url('/login') }}" class="text-decoration-none text-primary fw-semibold">Sign In</a>
             </div>
         </div>
     </div>

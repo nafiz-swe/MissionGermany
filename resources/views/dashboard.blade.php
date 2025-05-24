@@ -5,55 +5,12 @@
         vertical-align: middle !important;
     }
     .download-btn:hover {
-    background-color: #198754 !important; /* Bootstrap bg-success color */
+    background-color: #198754 !important;
     color: #fff !important;
     border-color: #198754 !important;
 }
     .logout-note {
         font-size: 15px;
-    }
-
-    .logout-btn {
-        padding: 8px 18px;
-        font-size: 15px;
-        font-weight: 500;
-        color: #fff;
-        background: linear-gradient(135deg, #0052cc, #00c6ff); /* Dark Blue → Cyan */
-        border: none;
-        border-radius: 8px;
-        transition: all 0.3s ease;
-        box-shadow: 0 3px 10px rgba(0, 82, 204, 0.3);
-    }
-
-    .logout-btn:hover {
-        background: linear-gradient(135deg, #0041a8, #00b3e6); /* Slightly darker on hover */
-        box-shadow: 0 5px 15px rgba(0, 82, 204, 0.4);
-    }
-
-    .logout-btn i {
-        margin-right: 6px;
-    }
-    .update-btn {
-        padding: 8px 18px;
-        font-size: 15px;
-        width: 100%;
-        font-weight: 500;
-        color: #fff;
-        background: linear-gradient(135deg, #0052cc, #00c6ff); /* Dark Blue → Cyan */
-        border: none;
-        border-radius: 8px;
-        transition: all 0.3s ease;
-        box-shadow: 0 3px 10px rgba(0, 82, 204, 0.3);
-    }
-
-    .update-btn:hover {
-        background: linear-gradient(135deg, #0041a8, #00b3e6); /* Slightly darker on hover */
-        /* transform: scale(1.03); */
-        box-shadow: 0 5px 15px rgba(0, 82, 204, 0.4);
-    }
-
-    .update-btn i {
-        margin-right: 6px;
     }
 </style>
 
@@ -74,7 +31,7 @@
 <!-- Account Details Section -->
 <div class="col-md-6">
     <div class="card shadow-sm mb-4">
-        <div class="card-header text-white" style="background: linear-gradient(135deg, #0052cc, #00c6ff);">
+        <div class="card-header text-white" style="background: linear-gradient(135deg, #016d5a, #00b7a8);">
             <h5 class="mb-0">👤 Account Details</h5>
         </div>
         <div class="card-body">
@@ -102,9 +59,7 @@
                     </select>
                 </div>
                 <div class="text-center mt-3">
-                    <button type="submit" class="update-btn">
-                        <i class="fas fa-save"></i> Update Info
-                    </button>
+                    <button type="submit" class="eurozoom-btn ez-submit"> Update Info</button>
                 </div>
             </form>
         </div>
@@ -181,9 +136,7 @@
     <form method="POST" action="{{ route('logout') }}" class="text-center mt-4">
     @csrf
     <p class="logout-note mb-2 text-muted">🔒 নিরাপদভাবে সেশন শেষ করতে Logout করুন:</p>
-    <button type="submit" class="logout-btn">
-        <i class="fas fa-sign-out-alt me-1"></i> Logout
-    </button>
+    <button type="submit" class="eurozoom-btn ez-submit"> Logout </button>
 </form>
 
 

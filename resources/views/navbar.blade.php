@@ -46,7 +46,7 @@
     }
 
     .nav-links li a:hover {
-        color: #1650ad;
+        color: #00c6aa;
     }
 
     .menu-toggle {

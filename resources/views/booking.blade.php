@@ -1,6 +1,6 @@
 @extends('layouts.app')
-<div class="text-white text-center py-5" style="background: linear-gradient(135deg, #0052cc, #00c6ff); padding-left: 20px; padding-right: 20px;">
-    <h1>Booking Form</h1>
+<div class="text-white text-center py-5" style="background: linear-gradient(135deg, #016d5a, #00b7a8); padding-left: 20px; padding-right: 20px;">
+<h1>Booking Form</h1>
     <p>
         Fill in the form to book your support session with us.
         Fields marked with <span class="text-danger">*</span> are mandatory.
@@ -133,10 +133,10 @@
                 <option value="Belgium">Belgium</option>
                 <option value="Croatia">Croatia</option>
                 <option value="Denmark">Denmark</option>
-                <option value="Germany">Germany</option>
-                <option value="Hungary">Hungary</option>
                 <option value="France">France</option>
                 <option value="Finland">Finland</option>
+                <option value="Germany">Germany</option>
+                <option value="Hungary">Hungary</option>
                 <option value="Italy">Italy</option>
                 <option value="Lithuania">Lithuania</option>
                 <option value="Netherlands">Netherlands</option>
@@ -145,7 +145,6 @@
                 <option value="Russia">Russia</option>
                 <option value="Romania">Romania</option>
                 <option value="Spain">Spain</option>
-                <option value="Sweden">Sweden</option>
                 <option value="Switzerland">Switzerland</option>
                 <option value="UK">UK</option>
             </select>
@@ -195,27 +194,8 @@
             <label class="form-check-label" for="terms">I agree to the terms and conditions <span class="text-danger">*</span></label>
         </div>
 
-        <style>
-    .booking-btn {
-        padding: 8px 18px;
-        font-size: 15px;
-        width: 100%;
-        font-weight: 500;
-        color: #fff;
-        background: linear-gradient(135deg, #0052cc, #00c6ff); /* Dark Blue → Cyan */
-        border: none;
-        border-radius: 8px;
-        transition: all 0.3s ease;
-        box-shadow: 0 3px 10px rgba(0, 82, 204, 0.3);
-    }
-    .booking-btn:hover {
-        background: linear-gradient(135deg, #0041a8, #00b3e6); /* Slightly darker on hover */
-        box-shadow: 0 5px 15px rgba(0, 82, 204, 0.4);
-    }
-</style>
-
                 <div class="text-center mt-3">
-                    <button type="submit" class="booking-btn"> Submit Booking </button>
+                    <button type="submit" class="eurozoom-btn ez-submit"> Confirm Booking </button>
                 </div>
 
     </form>
