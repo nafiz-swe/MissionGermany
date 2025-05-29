@@ -1,250 +1,161 @@
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Booking PDF</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>EuroZoom Booking Invoice</title>
     <style>
-body {
-    font-family: 'Playfair Display', serif;
-    padding: 30px;
-    background-color: #f9f9f9;
-    color: #014137;
-    border: 5px double #00c6aa;
-    border-radius: 5px;
-    box-shadow: 0 0 20px rgba(1, 109, 90, 0.2), 0 0 5px rgba(1, 109, 90, 0.2) inset;
-}
-
-.container {
-    background: #ffffff;
-    border-radius: 10px;
-    padding: 25px 30px;
-    box-shadow: 0 0 10px rgba(1, 109, 90, 0.1);
-}
-
-.highlight-box {
-    background-color: #e0fdf9;
-    border: 1px solid #00a895;
-    border-radius: 5px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 0 15px rgba(0, 183, 168, 0.2);
-    margin-bottom: 45px;
-}
-
-        .watermark {
-            position: fixed;
-            background: url('{{ asset('eurozoom.png') }}') no-repeat;
-            top: 30%;
-            left: 20%;
-            opacity: 0.06;
-            z-index: 999;
-            width: 400px;
-            font-size: 100px;
-            font-weight: bold;
-            font-style: italic;
-            transform: rotate(20deg);
-            transform-origin: left top;
-        }
-        .main-title {
-            color: #00c6aa;
-            font-size: 80px;
-            font-weight: bold;
-            font-family: "Brush Script MT", cursive;
-            font-style: italic;
-            text-shadow: 2px 2px 4px rgba(0, 0, 102, 0.2);
-            margin-bottom: 0px;
+        @page {
+            margin: 40px;
         }
 
-        .main-title-p2 {
-            font-size: 20px;
-            color: #00c6aa;
-            font-style: italic;
-            font-weight: 500;
-            margin-top: -10px;
-            margin-bottom: 5px;
+        body {
+            /* font-family: DejaVu Sans, sans-serif; */
+            font-size: 13px;
+            color: #333;
+            background: #fff;
         }
-        .main-title-p {
-            font-size: 14px;
-            color: #00c6aa;
-            font-style: italic;
-            font-weight: 500;
-            margin-top: 5px;
-            margin-bottom: 40px;
 
+        .invoice-box {
+            width: 100%;
+            padding: 20px;
         }
-        .page-title {
+
+        .header {
             text-align: center;
-            margin: 40px 0 10px;
-            color:rgb(7, 151, 7);
-            font-size: 40px;
-            font-weight: bold;
-            font-family: 'Playfair Display', serif;
+            margin-bottom: 20px;
         }
 
-        .sub-description {
-            text-align: center;
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 40px;
+        .header img {
+            width: 100px;
+        }
+
+        .header h2 {
+            font-size: 30px;
+            color: #003366;
+            margin: 10px 0 5px 0;
+        }
+
+        .info-table,
+        .payment-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .info-table th,
+        .info-table td,
+        .payment-table th,
+        .payment-table td {
+            padding: 8px 10px;
+            border: 1px solid #000;
+        }
+
+        .info-table th,
+        .payment-table th {
+            background-color: #f0f4f7;
+            color: #000;
+            text-align: left;
         }
 
         .section-title {
-            text-align: center;
-            margin: 40px 0 20px;
-            color: #00c6aa;
-            font-size: 28px;
+            font-size: 22px;
+            color: #003366;
             font-weight: bold;
-            border-bottom: 2px solid #00c6aa;
-            padding-top: 10px;
-            padding-bottom: 8px;
-            font-family: 'Playfair Display', serif;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 30px;
-        }
-
-        th, td {
-            padding: 10px 12px;
-            border: 1px solid #00c6aa;
-            text-align: left;
-            font-size: 15px;
-        }
-
-        th {
-            background-color: #e0fdf9;
-            color: #000;
-            font-weight: bold;
+            margin: 20px 0 8px 0;
         }
 
         .proof-img {
             margin-top: 10px;
-            border: 1px solid #ccc;
-            padding: 3px;
-            width: 220px;
-            border-radius: 6px;
         }
-        .terms-section {
+
+        .proof-img img {
+            width: 300px;
+            border: 1px solid #999;
+        }
+
+        .footer {
             margin-top: 40px;
-            font-size: 13px;
-            color: #555;
-            font-style: italic;
-            text-align: justify;
-            border-top: 1px dashed #bbb;
-            padding-top: 15px;
-        }
-        .tick-box {
-            display: inline-block;
-            color: green;
-            font-weight: bold;
-            border: 1px solid green;
-            border-radius: 3px;
-            padding: 0px 4px;
-            margin-right: 5px;
-            font-size: 15px;
-            line-height: 1;
-            vertical-align: bottom;
-            font-family: DejaVu Sans, sans-serif !important;
+            font-size: 11px;
+            text-align: center;
+            color: #888;
         }
 
     </style>
 </head>
 <body>
 
-    <img src="{{ asset('eurozoom.png') }}" class="watermark" alt="EuroZoom">
+    <div class="invoice-box">
 
-    <div class="container">
-
-        <!-- Styled Branding Box -->
-        <div class="highlight-box">
-            <div class="main-title">EuroZoom</div>
-            <div class="main-title-p2">Your Gateway to Europe</div>
-            <div class="main-title-p">www.eurozoom.net | eurozoom.net@gmail.com | 01737-226404 (WhatsApp)</div>
+        <div class="header">
+            
+            <img src="{{ asset('images/EuroZoom-footer.webp') }}" alt="Logo">
+            <h2>EuroZoom Booking Invoice</h2>
+            <p style="font-size: 12px;">www.eurozoom.org | support@eurozoom.org</p>
         </div>
+        <p><strong>Date:</strong> {{ $booking->created_at->format('d M Y') }}</p>
 
-        <!-- Booking Heading -->
-        <div class="page-title">Booking Confirmation</div>
-        <div class="sub-description">
-            Empowering your European ambitions with expert guidance, career support, <br> and German language training.
-        </div>
-
-        <!-- Personal Details -->
-        <div class="section-title">Personal Details</div>
-
-        <table>
+        <div class="section-title">Booking Information</div>
+        <table class="info-table">
             <tr>
+                <th>Booking ID</th>
+                <td>#{{ $booking->id }}</td>
                 <th>Full Name</th>
                 <td>{{ $booking->full_name }}</td>
             </tr>
             <tr>
                 <th>Place of Birth</th>
                 <td>{{ $booking->place_of_birth }}</td>
-            </tr>
-            <tr>
                 <th>Date of Birth</th>
                 <td>{{ \Carbon\Carbon::parse($booking->date_of_birth)->format('d M Y') }}</td>
             </tr>
             <tr>
-                <th>Passport or NID</th>
+                <th>Mobile</th>
+                <td>{{ $booking->mobile }}</td>
+                <th>Passport/NID</th>
                 <td>{{ $booking->passport_or_nid }}</td>
             </tr>
             <tr>
-                <th>Mobile</th>
-                <td>{{ $booking->mobile }}</td>
-            </tr>
-            <tr>
                 <th>Email</th>
-                <td>{{ $booking->email }}</td>
-            </tr>
-            <tr>
-                <th>Destination Country</th>
-                <td>{{ $booking->service_country }}</td>
-            </tr>
-            <tr>
-                <th>Booking Purpose</th>
-                <td>{{ $booking->service_subject }}</td>
-            </tr>
-        </table><br><br>
-
-        <!-- Payment Details -->
-        <div class="section-title">Payment Details</div>
-
-        <table>
-            <tr>
-                <th>Total Paid Amount</th>
-                <td>{{ number_format($booking->payment_amount, 2) }} BDT</td>
-            </tr>
-            <tr>
-                <th>Payment Method</th>
-                <td>{{ ucfirst($booking->payment_method) }}</td>
-            </tr>
-            @if($booking->payment_proof)
-            <tr>
-                <th>Proof of Payment</th>
-                <td>
-                    <img src="{{ public_path('storage/' . $booking->payment_proof) }}" class="proof-img" alt="Payment Proof">
-                </td>
-            </tr>
-            @endif
-            <tr>
-                <th>Booking Time</th>
-                <td>{{ $booking->created_at->format('d M Y h:i A') }}</td>
+                <td colspan="3">{{ $booking->email }}</td>
             </tr>
         </table>
 
-        <div class="terms-section">
-    <p><em>We are always by your side to make your European journey smoother.</em></p>
-    <p>
-    <span class="tick-box">&#10003;</span>
-    By confirming your booking, you acknowledge and agree to our service terms and refund policy.
-        All payments are considered final and are subject to the terms and conditions outlined by EuroZoom.
-        Your trust and cooperation are deeply valued and appreciated.
-    </p>
-</div>
+        <div class="section-title">Service & Payment</div>
+        <table class="payment-table">
+            <tr>
+                <th>Service Country</th>
+                <td>{{ $booking->service_country }}</td>
+                <th>Service Subject</th>
+                <td>{{ $booking->service_subject }}</td>
+            </tr>
+            <tr>
+                <th>Payment Method</th>
+                <td>{{ $booking->payment_method }}</td>
+                <th>Amount Paid</th>
+                <td>৳ {{ number_format($booking->payment_amount, 2) }}</td>
+            </tr>
+        </table>
 
+        <div class="section-title">Payment Proof</div>
+        <div class="proof-img">
+            <img src="{{ public_path('storage/' . $booking->payment_proof) }}" alt="Payment Proof">
+        </div>
+
+        <div class="footer">
+            <p>Thank you for booking with EuroZoom.</p>
+            <p>This invoice is system-generated and does not require a signature or seal.</p>
+        </div>
+
+                <div class="qr-code">
+            <img src="data:image/png;base64, {!! base64_encode(QrCode::size(100)->generate('Booking ID: '.$booking->id.', Name: '.$booking->full_name.', Email: '.$booking->email)) !!} ">
+        </div>
+
+        <div class="footer">
+            <p>&copy; {{ date('Y') }} EuroZoom. All rights reserved.</p>
+        </div>
 
     </div>
 

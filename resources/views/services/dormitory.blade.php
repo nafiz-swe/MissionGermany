@@ -1,5 +1,5 @@
 @extends('layouts.app')
-    <div class="text-white text-center py-5" style="background:oklch(37.9% 0.146 265.522); padding-left: 20px; padding-right: 20px;">
+    <div class="text-white text-center py-5" style="background:oklch(55.3% 0.195 38.402); padding-left: 20px; padding-right: 20px;">
         <h1>Dormitory Manage</h1>
         <p>Everything you need to know about getting your European Visa.</p>
     </div>

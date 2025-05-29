@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Booking;
 use PDF; // use barte hocche; barte parbe barte parbe, popular package: barryvdh/laravel-dompdf
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class BookingController extends Controller
 {
@@ -16,14 +17,17 @@ class BookingController extends Controller
     public function downloadPdf($id)
     {
         $booking = Booking::findOrFail($id);
-
         $pdf = PDF::loadView('bookings.pdf', compact('booking'));
-
         $filename = 'booking_' . $booking->id . '.pdf';
-
         return $pdf->download($filename);
     }
     
+    public function showHtml($id)
+    {
+        $booking = Booking::findOrFail($id);
+        return view('bookings.pdf', compact('booking'));
+    }
+
     public function store(Request $request)
     {
         $request->validate([

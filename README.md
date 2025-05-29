@@ -120,6 +120,15 @@ File Modified	Change Summary
 MySQL (phpMyAdmin)	Created new DB: missiongermany_db
 Terminal Commands	Cleared config/cache, ran migrations
 
+
+### 🔹 Install QR Code Package (একবারই):
+composer require simplesoftwareio/simple-qrcode
+
+### Controller Update:
+use SimpleSoftwareIO\QrCode\Facades\QrCode; // Add this use line at top
+
+
+
 ## Nafizul Islam 
 Subject: B.Sc in Software Engineering (2019-2023)
 University: Daffodil International University, Dhaka, Babgladesh

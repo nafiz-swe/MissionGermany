@@ -68,4 +68,5 @@ Route::get('/dashboard', function () {
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth')->name('dashboard');
 Route::get('/booking/{id}/download', [BookingController::class, 'downloadPdf'])->name('booking.download');
+Route::get('/booking/html/{id}', [BookingController::class, 'showHtml'])->name('booking.html');
 Route::put('/user/update', [UserController::class, 'update'])->name('user.update');
