@@ -93,7 +93,7 @@
             
             <img src="{{ asset('images/EuroZoom-footer.webp') }}" alt="Logo">
             <h2>EuroZoom Booking Invoice</h2>
-            <p style="font-size: 12px;">www.eurozoom.org | support@eurozoom.org</p>
+            <p style="font-size: 12px;">www.eurozoom.net | eurozoom.net@gmail.com</p>
         </div>
         <p><strong>Date:</strong> {{ $booking->created_at->format('d M Y') }}</p>
 
