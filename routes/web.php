@@ -70,8 +70,3 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 Route::get('/booking/{id}/download', [BookingController::class, 'downloadPdf'])->name('booking.download');
 Route::get('/booking/html/{id}', [BookingController::class, 'showHtml'])->name('booking.html');
 Route::put('/user/update', [UserController::class, 'update'])->name('user.update');
-
-
-
-  git config --global user.email "nafiznoyon480@gmail.com"
-  git config --global user.name "nafiz-swe"
