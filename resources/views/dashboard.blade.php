@@ -1,4 +1,6 @@
 @extends('layouts.app')
+@section('content')
+
 <style>
     table th, table td {
         text-align: center;
@@ -14,9 +16,12 @@
     }
 </style>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-@section('content')
+<div class="text-white text-center py-5" style="background:oklch(37.3% 0.034 259.733); padding-left: 20px; padding-right: 20px;">
+        <h1>Dashboard</h1>
+        <p>Everything you need to know about getting your European Visa.</p>
+    </div>
+
 <div class="container mt-5">
     <h2>🎉 Welcome, {{ $user->name }}!</h2>
     <p>আপনি সফলভাবে লগইন করেছেন।</p>
@@ -59,7 +64,7 @@
                     </select>
                 </div>
                 <div class="text-center mt-3">
-                    <button type="submit" class="eurozoom-btn ez-submit"> Update Info</button>
+                    <button type="submit" class="ez-submit px-4 py-2 border-0">Update Info</button>
                 </div>
             </form>
         </div>
@@ -133,11 +138,11 @@
 
     </div>
 
-    <form method="POST" action="{{ route('logout') }}" class="text-center mt-4">
+    <form method="POST" action="{{ route('logout') }}" class="text-center my-5">
     @csrf
     <p class="logout-note mb-2 text-muted">🔒 নিরাপদভাবে সেশন শেষ করতে Logout করুন:</p>
-    <button type="submit" class="eurozoom-btn ez-submit"> Logout </button>
-</form>
+    <button type="submit" class="ez-submit px-4 py-2 border-0">Logout</button>
+    </form>
 
 
 

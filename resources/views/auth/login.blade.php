@@ -1,9 +1,10 @@
 @extends('layouts.app')
+@section('content')
+
     <div class="text-white text-center py-5" style="background: linear-gradient(135deg, #016d5a, #00b7a8); padding-left: 20px; padding-right: 20px;">
         <h1>Login your account</h1>
         <p>Have questions or need help? Reach out to us anytime — we’re here for you!</p>
     </div>
-@section('content')
 <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh; background: #f8f9fa;">
     <div class="card shadow-lg p-4" style="width: 100%; max-width: 450px; border-radius: 15px;">
         <h3 class="text-center mb-4" style="color: #0d6efd;">🔐 লগইন করুন</h3>
@@ -27,7 +28,7 @@
                 <input type="password" name="password" id="password" class="form-control" required>
             </div>
             <div class="text-center mt-3">
-                <button type="submit" class="eurozoom-btn ez-submit"> Sign In</button>
+                <button type="submit" class="ez-submit px-4 py-2 border-0">Sign In</button>
             </div>
         </form>
 

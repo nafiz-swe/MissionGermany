@@ -1,56 +1,56 @@
-<footer class="bg-dark text-white pt-5 pb-3 mt-5">
-    <div class="container">
-        <div class="row">
+<footer class="text-white position-relative overflow-hidden d-flex flex-column justify-content-end"
+    style="background: url('{{ asset('images/fouraxiz-footer.svg') }}') center top 20px / 100% 100% no-repeat; min-height: 500px; font-family: 'Inter', sans-serif;">
 
-            <!-- About Section -->
-            <div class="col-md-3">
-                <h5>About Us</h5>
-                <p>We help people navigate all the visa processing systems for Germany from Bangladesh efficiently and transparently.</p>
+
+    <!-- White transparent overlay -->
+    <div class="position-absolute w-100 h-100" style="background: rgb(255 255 255 / 88%); top: 0; left: 0;"></div>
+
+    <div class="container px-0 position-relative z-2 pt-4">
+        <div class="row gx-0 text-left">
+            <div class="col-md-3 mb-5 px-3">
+                <!-- Logo -->
+                <img src="{{ asset('images/eurozoom-logo.gif') }}" alt="4axiz Logo" style="max-width: 150px; height: auto;" class="mb-2">
+                <!-- Description Text -->
+                <p class="text-dark mb-1" style="font-size: 13px;"> Reliable Education and Visa Consultancy in Bangladesh. </p>
+                <p class="text-dark" style="font-size: 13px;"> Assisting students and professionals with study abroad guidance and visa processing since 2025. </p>
             </div>
 
-            <!-- Useful Links -->
-            <div class="col-md-3">
-                <h5>Useful Links</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#" class="text-white">Privacy Policy</a></li>
-                    <li><a href="#" class="text-white">Terms and Conditions</a></li>
-                    <li><a href="#" class="text-white">Our Services</a></li>
-                    <li><a href="#" class="text-white">YouTube Blog</a></li>
-                    <li><a href="https://zoom.us/j/your-zoom-link" class="text-white" target="_blank">Join Zoom Meeting (Sunday 9PM BD Time)</a></li>
+            <div class="col-md-3 mb-5 px-3">
+                <h5 class="text-dark" style="font-size: 1.15rem;">BANGLADESH OFFICE</h5>
+                <p class="text-dark" style="font-size: 13px;"><i class="fas fa-map-marker-alt me-2 text-danger"></i> Bonpara, Natore</p>
+                <p class="text-dark" style="font-size: 13px;"><i class="fas fa-phone me-2 text-success"></i> +880 1737 226 404</p>
+                <p class="text-dark" style="font-size: 13px;"><i class="fas fa-envelope me-2 text-primary"></i> nafizul35-480@diu.edu.bd</p>
+            </div>
+
+            <div class="col-md-3 mb-5 px-3">
+                <h5 class="text-dark" style="font-size: 1.15rem;">Germany OFFICE</h5>
+                <p class="text-dark" style="font-size: 13px;"><i class="fas fa-map-marker-alt me-2 text-danger"></i>B/C-23,  Munich</p>
+                <p class="text-dark" style="font-size: 13px;"><i class="fas fa-phone me-2 text-success"></i> 01568-879478</p>
+                <p class="text-dark" style="font-size: 13px;"><i class="fas fa-envelope me-2 text-primary"></i> nafizulislam.swe@gmail.com</p>
+            </div>
+
+            <div class="col-md-3 mb-5 px-3">
+                <h5 class="text-dark" style="font-size: 1.15rem;">OUR SERVICES</h5>
+                <ul class="list-unstyled text-dark" style="font-size: 13px;">
+                    <li class="mb-2"><i class="fas fa-code me-2 text-secondary"></i><a href="#" class="text-dark">Web Application Development</a></li>
+                    <li class="mb-2"><i class="fas fa-mobile-alt me-2 text-secondary"></i><a href="#" class="text-dark">Mobile App Development</a></li>
+                    <li class="mb-2"><i class="fas fa-cogs me-2 text-secondary"></i><a href="#" class="text-dark">ERP Software Development</a></li>
+                    <li class="mb-2"><i class="fas fa-robot me-2 text-secondary"></i><a href="#" class="text-dark">AI &amp; Machine Learning</a></li>
+                    <li class="mb-2"><i class="fas fa-globe me-2 text-secondary"></i><a href="#" class="text-dark">Domain &amp; Hosting Services</a></li>
                 </ul>
             </div>
-
-            <!-- Contact Section -->
-            <div class="col-md-3">
-                <h5>Address</h5>
-                <p>Madrasa Market,<br>Bonpara Bazar,<br>Natore, Bangladesh</p>
-            </div>
-
-            <!-- Social Media -->
-            <div class="col-md-3">
-                <h5>Follow Us</h5>
-                <a href="https://facebook.com/" target="_blank" class="text-white me-3">
-                    <i class="fab fa-facebook fa-lg"></i>
-                </a>
-                <a href="https://youtube.com/" target="_blank" class="text-white me-3">
-                    <i class="fab fa-youtube fa-lg"></i>
-                </a>
-                <a href="https://instagram.com/" target="_blank" class="text-white me-3">
-                    <i class="fab fa-instagram fa-lg"></i>
-                </a>
-                <a href="https://linkedin.com/" target="_blank" class="text-white">
-                    <i class="fab fa-linkedin fa-lg"></i>
-                </a>
-            </div>
-
         </div>
 
-        <!-- Footer Bottom -->
-        <div class="text-center pt-3 mt-4 border-top border-secondary">
-            <p>&copy; {{ date('Y') }} Mission Germany. All rights reserved.</p>
-            <p class="mb-0">
-                Developed by <a href="https://github.com/nafiz-swe/" target="_blank" class="text-white text-decoration-underline">Nafiz</a>
-            </p>
+
+        <!-- Thicker black border -->
+        <hr class="my-0" style="border-top: 2px solid gray;">
+
+        <!-- Copyright -->
+        <div class="text-center py-4">
+            <small class="text-dark" style="font-size: 13px;">
+                &copy; 2025. All Rights Reserved By 
+                <a href="https://github.com/nafiz-swe" target="_blank" class="fw-bold text-decoration-none" style="font-size: 13px; color: #FF0D0D;">Nafizul Islam</a>
+            </small>
         </div>
     </div>
 </footer>

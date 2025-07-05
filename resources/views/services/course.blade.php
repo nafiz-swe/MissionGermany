@@ -1,10 +1,11 @@
 @extends('layouts.app')
+@section('content')
+
 <div class="text-white text-center py-5" style="background:oklch(64.8% 0.2 131.684); padding-left: 20px; padding-right: 20px;">
         <h1>German Language Course</h1>
         <p>Everything you need to know about getting your European Visa.</p>
     </div>
 
-@section('content')
 @include('services.common_booking')
 
 <div class="course-banner">

@@ -1,10 +1,10 @@
 @extends('layouts.app')
-
+@section('content')
 <div class="text-white text-center py-5" style="background: linear-gradient(135deg, #016d5a, #00b7a8); padding-left: 20px; padding-right: 20px;">
 <h1>Creat New Account</h1>
-        <p>Have questions or need help? Reach out to us anytime — we’re here for you!</p>
-    </div>
-@section('content')
+    <p>Have questions or need help? Reach out to us anytime — we’re here for you!</p>
+</div>
+
 <div class="container mt-5" style="max-width: 600px; font-family: 'Poppins', sans-serif;">
     <div class="card shadow-sm border-0">
         <div class="card-body p-4">
@@ -67,8 +67,7 @@
                 </div>
 
                 <div class="text-center mt-3">
-                    <button type="submit" class="eurozoom-btn ez-submit"> Create account </button>
-                    <!-- <button type="submit" class="register-btn"> Create Account</button> -->
+                    <button type="submit" class="ez-submit px-4 py-2 border-0"> Create account</button>
                 </div>
             </form>
 

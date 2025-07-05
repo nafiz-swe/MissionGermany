@@ -1,12 +1,6 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Reviews | MissionGermany</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-    @include('navbar')
+
+@extends('layouts.app')
+@section('content')
 
     <div class="text-white text-center py-5" style="background: oklch(44.3% 0.11 240.79); padding-left: 20px; padding-right: 20px;">
         <h1>Student Reviews</h1>
@@ -35,8 +29,5 @@
             </div>
         </div>
     </div>
+@endsection
 
-    @include('layouts.footer')
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>

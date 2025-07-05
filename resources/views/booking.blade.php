@@ -1,4 +1,6 @@
 @extends('layouts.app')
+@section('content')
+
 <div class="text-white text-center py-5" style="background: linear-gradient(135deg, #016d5a, #00b7a8); padding-left: 20px; padding-right: 20px;">
 <h1>Booking Form</h1>
     <p>
@@ -8,15 +10,7 @@
     </p>
 </div>
 
-@section('content')
-
 <div class="container mt-5">
-
-    <!-- <div class="p-4 text-white shadow-sm mb-4 rounded" >
-        <h2 class="mb-2">Booking Form</h2>
-        <p class="mb-0">Fill in the form to book your support session with us. Fields marked with <span class="text-danger">*</span> are mandatory. Ensure the payment proof is uploaded correctly.</p>
-    </div> -->
-
     @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
@@ -195,7 +189,7 @@
         </div>
 
                 <div class="text-center mt-3">
-                    <button type="submit" class="eurozoom-btn ez-submit"> Confirm Booking </button>
+                    <button type="submit" class="ez-submit px-4 py-2 border-0">Confirm Booking</button>
                 </div>
 
     </form>
